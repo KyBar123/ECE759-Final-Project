@@ -9,7 +9,7 @@ int main(int argc, char *argv[]){
 	//Objective, take an int command line input and count from 0 to that number, then from that number down to 0
 	
 	//Initialize input as a int
-	long long topEnd = std::stoll(argv[1]);
+	int topEnd = std::stoi(argv[1]);
 	//topEnd = 63;
 	//For loop to count up from 0 to the taken number. On ending, set a new line
     //for(int count = 0; count <= topEnd; count++ ){
