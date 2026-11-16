@@ -4,6 +4,6 @@
 #include <cstddef>
 
 // Performs a brute force attack on an MD5 hashed password
-void MD5(std::string password);
+uint8_t MD5(std::string password);
 
 #endif

@@ -25,7 +25,8 @@ int main(int argc, char* argv[]) {
 
     //time MD5 algorithm
     start = high_resolution_clock::now();
-    MD5(passcode);
+    uint8_t md5Hash[16];
+    md5Hash[16] = MD5(passcode);
     end = high_resolution_clock::now();
 
     duration_sec = std::chrono::duration_cast<duration<double, std::milli>>(end - start);

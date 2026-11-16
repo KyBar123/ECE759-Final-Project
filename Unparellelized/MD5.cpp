@@ -6,7 +6,7 @@
 #include <iomanip>
 #include "MD5.h"
 
-void MD5(std::string password){
+uint8_t MD5(std::string password){
 
     //shift amounts for the operations
     static const uint32_t s[64] = {7, 12, 17, 22,  7, 12, 17, 22,  7, 12, 17, 22,  7, 12, 17, 22, 
@@ -128,9 +128,10 @@ void MD5(std::string password){
         }
     }
     
-    for (int printtest=0; printtest<16; printtest++){
-        std::cout << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(mdHash[printtest]);
-    }
+    return mdHash[16];
+    //for (int printtest=0; printtest<16; printtest++){
+        //std::cout << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(mdHash[printtest]);
+    //}
 
     std::cout << "\n";
 }
