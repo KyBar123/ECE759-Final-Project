@@ -1,9 +1,8 @@
 #ifndef MD5_H
 #define MD5_H
 #include <string>
-#include <cstddef>
+#include <cstdint>
 
-// Performs a brute force attack on an MD5 hashed password
-uint8_t MD5(std::string password);
+void MD5(std::string password, uint8_t hash[16]);
 
 #endif
