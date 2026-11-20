@@ -1,10 +1,12 @@
 #ifndef wordGen_H
 #define wordGen_H
 #include <string>
-#include <cstddef>
+#include <cstdlib>
 #include <iostream>
+#include <vector>
+#include <chrono>
 
 
-uint8_t wordGen(int uniqueNum);
+void wordGen(int uniqueNum, uint8_t compareHash[16]);
 
 #endif

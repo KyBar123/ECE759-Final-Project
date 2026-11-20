@@ -31,15 +31,18 @@ int main(int argc, char* argv[]) {
 
     //time MD5 algorithm
     start = high_resolution_clock::now();
-    uint8_t md5Hash[16];
+   
 
+    uint8_t md5Hash[16];
     MD5(passcode, md5Hash);
+	
+	
 	
 	uint8_t comp[16];
 	//brute force cracking
 	bool flag = 0;
-	for(int i = 0; i < 62*62*62; i++){
-		comp[16] = wordGen(i);
+	for(int i = 1; i < 62*62*62; i++){
+		wordGen(i,comp);
 		flag = 1;
 		
 		for(int j = 0; j < 16; j++){
