@@ -14,6 +14,24 @@ int main(int argc, char* argv[]) {
 
     cudaMalloc((void**)&hps, sizeof(int) * threads);
     cudaMemset(threads, 0, threads * sizeof(int));
+	
+	/*************Variables To Prepare For The Hash**************************************************
+		1 Variable to hold the hash to compare to
+		2 Variable to pull the string out of	
+	
+	//we need to make the hash to compare against 
+	//this value must be able to be pointed to by our kernels. 
+		//Will need to load this value into the memory for kernels to use.
+	uint8_t md5HashHost[16];
+	uint8_t md5HashDevice[16];
+	MD5(passcode, md5HashHost);	
+	
+	//Need to validate if "sizeof(uint8_t) * (16)" will work for certian, but we can adjust it as needed
+	cudaMalloc((void**)&md5HashDevice, sizeof(uint8_t) * (16));
+	cudaMemcpy(md5HashDevice, &md5HashHost, sizeof(uint8_t) * (16), cudaMemcpyHostToDevice);
+	
+	//also need to pull a string out of the hash
+	****************************************************/
 
     cudaEvent_t start;
     cudaEvent_t stop;
