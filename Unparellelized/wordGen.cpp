@@ -21,5 +21,7 @@ uint8_t wordGen(int uniqueNum){
 	}	
 	
 	//implement the hash on the word we generate
-	return MD5(word);		
+	uint8_t compareHash[16];
+	MD5(passcode, compareHash);		
+	return compareHash;
 }
