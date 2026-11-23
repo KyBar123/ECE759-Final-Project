@@ -9,10 +9,6 @@ using std::chrono::high_resolution_clock;
 using std::chrono::duration;
 
 
-
-//g++ main.cpp MD5.cpp wordGen.cpp -Wall -O3 -std=c++17 -o passwordTest -fopenmp
-
-
 int main(int argc, char* argv[]) {
 
     //check arg
