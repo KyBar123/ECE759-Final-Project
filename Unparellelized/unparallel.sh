@@ -11,4 +11,4 @@
 
 g++ main.cpp MD5.cpp wordGen.cpp -Wall -O3 -std=c++17 -o main
 
-./main zzzz
+./main zzzzz
