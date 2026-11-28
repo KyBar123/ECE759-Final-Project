@@ -26,7 +26,6 @@ int main(int argc, char* argv[]) {
     std::string passcode = argv[1];
 
     //time MD5 algorithm
-    start = high_resolution_clock::now();
     double hashes = 0;
    
 
@@ -34,7 +33,7 @@ int main(int argc, char* argv[]) {
     MD5(passcode, md5Hash);
     hashes++;
 	
-	
+	start = high_resolution_clock::now();
 	
 	uint8_t comp[16];
 	//brute force cracking
