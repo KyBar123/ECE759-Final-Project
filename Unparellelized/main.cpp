@@ -41,7 +41,9 @@ int main(int argc, char* argv[]) {
 	uint8_t comp[16];
 	//brute force cracking
 	bool flag = 0;
-	for(int i = 0; i < 62*62*62*62*62; i++){
+    unsigned long long halfCharLimit = 62*62*62*62*62;
+    unsigned long long charLimit = halfCharLimit * halfCharLimit;
+	for(unsigned long long i = 0; i < charLimit; i++){
 		wordGen(i,comp);
         hashes++;
 		flag = 1;

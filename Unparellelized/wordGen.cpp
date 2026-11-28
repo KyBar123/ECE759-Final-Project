@@ -8,12 +8,12 @@
 
 using namespace std;
 
-void wordGen(int uniqueNum, uint8_t compareHash[16]){
+void wordGen(unsigned long long uniqueNum, uint8_t compareHash[16]){
 	
 	
 	
 	//every loop divide i by 62, but process the remainder for the current loop. Should make a sitation like 62 result in 0 and 61 on a later loop be z
-	int sub = 62;
+	unsigned long long sub = 62;
 	int digits = 1;
 	std::string word = "";		
 	

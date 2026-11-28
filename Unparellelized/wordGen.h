@@ -7,6 +7,6 @@
 #include <chrono>
 
 
-void wordGen(int uniqueNum, uint8_t compareHash[16]);
+void wordGen(unsigned long long uniqueNum, uint8_t compareHash[16]);
 
 #endif
