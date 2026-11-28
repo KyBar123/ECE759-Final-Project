@@ -8,6 +8,9 @@ __global__ void MD5BreakerKernel(int * hps, uint16_t * hashedPassword, uint8_t *
     int index = threadIdx.x + blockIdx.x*blockDim.x;
 	//index should easily be able to leverage the for loop from wordGen.cpp to generate the word to be hashed and we should be able to compare here.
 		//This should be pretty lightweight for each run
+		
+		
+		
 	/*****************************************************
 	std::string word = "";	
 	//every loop divide i by 62, but process the remainder for the current loop. Should make a sitation like 62 result in 0 and 61 on a later loop be z
