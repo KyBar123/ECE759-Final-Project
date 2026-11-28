@@ -22,6 +22,8 @@ int main(int argc, char* argv[]) {
     high_resolution_clock::time_point end;
     duration<double, std::milli> duration_ms;
     duration<double> duration_sec;
+    duration<double, std::ratio<60>> duration_min;
+
 
     //grab inputted passcode
     std::string passcode = argv[1];
@@ -64,9 +66,10 @@ int main(int argc, char* argv[]) {
 
     duration_ms = std::chrono::duration_cast<duration<double, std::milli>>(end - start);
     duration_sec = std::chrono::duration_cast<duration<double>>(end - start);
+    duration_min = std::chrono::duration_cast<duration<double, std::ratio<60>>>(end - start);
     
     //report timig and bounding elements
-    std::cout << "Execution time: " << duration_sec.count() << "\n";
+    std::cout << "Execution time: " << duration_min.count() << "\n";
 
     //report HPS
     double hps = hashes/ (duration_ms.count()/1000);
