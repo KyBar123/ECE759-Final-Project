@@ -20,7 +20,8 @@ int main(int argc, char* argv[]) {
     //itiallize timing.md fields
     high_resolution_clock::time_point start;
     high_resolution_clock::time_point end;
-    duration<double, std::milli> duration_sec;
+    duration<double, std::milli> duration_ms;
+    duration<double> duration_sec;
 
     //grab inputted passcode
     std::string passcode = argv[1];
@@ -61,13 +62,14 @@ int main(int argc, char* argv[]) {
 		
     end = high_resolution_clock::now();
 
-    duration_sec = std::chrono::duration_cast<duration<double, std::milli>>(end - start);
+    duration_ms = std::chrono::duration_cast<duration<double, std::milli>>(end - start);
+    duration_sec = std::chrono::duration_cast<duration<double>>(end - start);
     
     //report timig and bounding elements
     std::cout << "Execution time: " << duration_sec.count() << "\n";
 
     //report HPS
-    double hps = hashes/ (duration_sec.count()/1000);
+    double hps = hashes/ (duration_ms.count()/1000);
     std::cout << "Hashes per second: " << hps << "\n";
 
     return 0;
